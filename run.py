@@ -13,7 +13,7 @@ def start_room():
     answer = input(f"{player_answer}").lower()
 
     if validate_answer(answer):
-        return True
+        print("The earplugs are in your pocket. To get them just type 'inventory'.\n")
 
 
 def validate_answer(answer):
