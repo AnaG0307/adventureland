@@ -34,6 +34,9 @@ def ear_plugs():
 
 
 def inventory(answer):
+    """
+    Dictionary to store objects collected by the player to use in the future
+    """
     objects_collected = {
         "earplugs": False
     }
