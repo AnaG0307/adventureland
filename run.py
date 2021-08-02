@@ -12,17 +12,20 @@ def start_room():
     ear_plugs()
 
 
+player_answer = input(f"Do you want to pick up the earplugs? y/n\n")
+
+
 def ear_plugs():
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
     stored in the inventory function for future use.
     Requests correct answer from player to keep playing.
     """
-    player_answer = input(f"Do you want to pick up the earplugs? y/n\n")
-   
     if player_answer == 'y':
         print(f"The earplugs are now in your pocket, to get them type 'inventory' when needed.\n")
+        # inventory().modify_dict({"earplugs": True})
         return True
+        inventory().update({"earplugs": True})
     if player_answer == 'n':
         return False
     if player_answer != 'y' or 'n':
@@ -30,11 +33,10 @@ def ear_plugs():
         return ear_plugs()
 
 
-def inventory():
+def inventory(answer):
     objects_collected = {
-
+        "earplugs": False
     }
-    objects_collected.update("earplugs": True)
     print(objects_collected)
 
 
@@ -76,7 +78,7 @@ def main():
     Calls all the functions in the game
     """
     start_room()
+    inventory(player_answer)
     door_choice()
-    inventory()
 
 main()
