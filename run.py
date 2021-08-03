@@ -2,45 +2,31 @@ print("\nWelcome to Adventureland, the adventure of you life!\n")
 
 player_name = input(F"Pleaser enter your name: \n")
 
+print(f"\nHello {player_name}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a dinner party with some friends and one of a sudden everything turned blurry. The room is completely empty except for some earplugs in one corner.\n")
 
-def start_room():
-    """
-    Explains how to game works, what are the features and gets started with the first challenge.
-    Calls next function to keep playing.
-    """
-    print(f"Hello {player_name}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a dinner party with some friends and one of a sudden everything turned blurry. The room is completely empty except for some earplugs in one corner.\n")
-    ear_plugs()
+player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
 
+inventory = {
+    "earplugs": False
+    }
+print(inventory)
 
-player_answer = input(f"Do you want to pick up the earplugs? y/n\n")
-
-
-def ear_plugs():
+def ear_plugs(inventory):
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
     stored in the inventory function for future use.
-    Requests correct answer from player to keep playing.
+    Requests yes/no answer from player to keep playing.
+    Updates the inventory dictionary to True when object is picked.
     """
-    if player_answer == 'y':
-        print(f"The earplugs are now in your pocket, to get them type 'inventory' when needed.\n")
-        # inventory().modify_dict({"earplugs": True})
+    if player_answer == 'yes':
+        print(f"\nThe earplugs are now in your pocket, to get them type 'inventory' when needed.\n")
+        inventory["earplugs"] = True
         return True
-        inventory().update({"earplugs": True})
-    if player_answer == 'n':
+    if player_answer == 'no':
         return False
-    if player_answer != 'y' or 'n':
-        print(f"Invalid answer, please type 'y' or 'n' only.\n")
+    if player_answer != 'yes' or 'no':
+        print(f"Invalid answer, please type 'yes' or 'no' only.\n")
         return ear_plugs()
-
-
-def inventory(answer):
-    """
-    Dictionary to store objects collected by the player to use in the future
-    """
-    objects_collected = {
-        "earplugs": False
-    }
-    print(objects_collected)
 
 
 def door_choice():
@@ -53,12 +39,12 @@ def door_choice():
     door_answer = input(f"\nThere are two doors in front of you, one is red, the other one is blue. You need to choose one, type 'red' or 'blue'.\n")
 
     if door_answer == 'blue':
-        print("There is a hangry wolf in the room, the door is locked at your back. There is no escape, you die!\n")
+        print("\nThere is a hangry wolf in the room, the door is locked at your back. There is no escape, you die!\n")
         return game_over()
     if door_answer == 'red':
         return firebird_room()
     if door_answer != 'blue' or 'red':
-        print(f"Invalid answer, please type 'blue' or 'red' only.\n")
+        print(f"\nInvalid answer, please type 'red' or 'blue' only.\n")
         return door_choice()
 
 
@@ -80,8 +66,8 @@ def main():
     """
     Calls all the functions in the game
     """
-    start_room()
-    inventory(player_answer)
+    ear_plugs(inventory)
+    print(inventory)
     door_choice()
 
 main()
