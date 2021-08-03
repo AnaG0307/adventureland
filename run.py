@@ -1,17 +1,4 @@
-print("\nWelcome to Adventureland, the adventure of you life!\n")
-
-player_name = input(F"Pleaser enter your name: \n")
-
-print(f"\nHello {player_name}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a dinner party with some friends and one of a sudden everything turned blurry. The room is completely empty except for some earplugs in one corner.\n")
-
-player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
-
-inventory = {
-    "earplugs": False
-    }
-print(inventory)
-
-def ear_plugs(inventory):
+def ear_plugs(inventory, player_answer):
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
     stored in the inventory function for future use.
@@ -66,8 +53,27 @@ def main():
     """
     Calls all the functions in the game
     """
-    ear_plugs(inventory)
-    print(inventory)
+    print("\nWelcome to Adventureland, the adventure of you life!\n")
+
+    player_name = input(F"Pleaser enter your name: \n")
+
+    s = \
+"""Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a 
+dinner party with some friends and one of a sudden everything turned blurry. The room is completely empty except for some 
+earplugs in one corner.
+""".format(player_name)
+
+    print(s)
+
+    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
+
+    inventory = {
+        "earplugs": False
+    }
+
+    ear_plugs(inventory, player_answer)
     door_choice()
 
-main()
+
+if __name__ == '__main__':
+    main()
