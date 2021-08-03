@@ -13,7 +13,7 @@ def ear_plugs(inventory, player_answer):
         return False
     if player_answer != 'yes' or 'no':
         print(f"Invalid answer, please type 'yes' or 'no' only.\n")
-        return ear_plugs()
+        return ear_plugs(inventory, player_answer)
 
 
 def door_choice():
@@ -39,14 +39,33 @@ def firebird_room():
     """
     Player needs to solve the Firebird's riddle
     """
-    print('workout code for fire bird room')
+    a = \
+"""\nIn the next room you find a majestuous Firebird at the central area, blocking your way to the next door. You try to reach 
+the exit very carefully trying not to disturb the bird but she wakes up and open her wings. She looks right into your eyes 
+and telepathically tells you that if you wish to go through the door you will need to solve the following riddle
+""".format()
 
+    print(a)
+    riddle = input(f"What belongs to you but is used by everyone?\n")
+    if riddle == "your name" or "name":
+        return mermaid_room()
+    if riddle != "your name" or "name":
+        print(f"Incorrect answer, try again!\n")
+        firebird_room()
+
+def mermaid_room():
+    print("need to define mermaid room")
 
 def game_over():
     """
     Ends the game and asks the player if s/he wants to play again
     """
     print('GAME OVER')
+    replay = input(f"Do you want to play again? yes/no\n")
+    if replay == 'yes':
+        return main()
+    if replay == 'no':
+        print(f"Thank you for playing with us. Hope to see you soon!")
 
 
 def main():
@@ -73,6 +92,8 @@ earplugs in one corner.
 
     ear_plugs(inventory, player_answer)
     door_choice()
+    firebird_room()
+    game_over()
 
 
 if __name__ == '__main__':
