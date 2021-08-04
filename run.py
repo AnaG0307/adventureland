@@ -6,7 +6,7 @@ def ear_plugs(inventory, player_answer):
     Updates the inventory dictionary to True when object is picked.
     """
     if player_answer == 'yes':
-        print(f"\nThe earplugs are now in your pocket, to get them type 'inventory' when needed.\n")
+        print(f"\nThe earplugs are now in your pocket.\n")
         inventory["earplugs"] = True
         return True
     if player_answer == 'no':
@@ -32,7 +32,7 @@ def door_choice(inventory):
         firebird_room(inventory)
     if door_answer != 'blue' or 'red':
         print(f"\nInvalid answer, please type 'red' or 'blue' only.\n")
-        door_choice()
+        door_choice(inventory)
 
 
 def firebird_room(inventory):
@@ -48,7 +48,10 @@ and telepathically tells you that if you wish to go through the door you will ne
     print(a)
     riddle = input(f"What belongs to you but is used by everyone?\n")
     if riddle == "your name" or riddle == "name":
+        print("\nWell done! The Firebird gifts you with a key.\n")
         mermaid_room(inventory)
+        inventory["key"] = True
+        return True
     else:
         print(f"Incorrect answer, try again!\n")
         firebird_room()
@@ -110,8 +113,10 @@ earplugs in one corner.
     player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
 
     inventory = {
-        "earplugs": False
+        "earplugs": False,
+        "key": False
     }
+    print(inventory)
 
     ear_plugs(inventory, player_answer)
     door_choice(inventory)
