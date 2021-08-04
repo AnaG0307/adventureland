@@ -16,7 +16,7 @@ def ear_plugs(inventory, player_answer):
         return ear_plugs(inventory, player_answer)
 
 
-def door_choice():
+def door_choice(inventory):
     """
     Player can choose to go through red or blue door.
     Red door gets the player to the Firebird room and keeps playing.
@@ -29,13 +29,13 @@ def door_choice():
         print("\nThere is a hangry wolf in the room, the door is locked at your back. There is no escape, you die!\n")
         game_over()
     if door_answer == 'red':
-        firebird_room()
+        firebird_room(inventory)
     if door_answer != 'blue' or 'red':
         print(f"\nInvalid answer, please type 'red' or 'blue' only.\n")
         door_choice()
 
 
-def firebird_room():
+def firebird_room(inventory):
     """
     Player needs to solve the Firebird's riddle
     """
@@ -48,14 +48,33 @@ and telepathically tells you that if you wish to go through the door you will ne
     print(a)
     riddle = input(f"What belongs to you but is used by everyone?\n")
     if riddle == "your name" or riddle == "name":
-        mermaid_room()
+        mermaid_room(inventory)
     else:
         print(f"Incorrect answer, try again!\n")
         firebird_room()
 
 
-def mermaid_room():
-    print("need to define mermaid room")
+def mermaid_room(inventory):
+    """
+    Function access game_over() or the inventory 
+    """
+    print(f"\nA mermaid is singing beautifully in the room. the next door is easily accessible.\n")
+    mermaid_choice = input(f"\nDo you want to listen to her or use the earplugs? Type 'listen' or 'earplugs'\n")
+
+    if mermaid_choice == 'listen':
+        print(f"\nYou got enchanted and stay listening to the mermaid forever. You die!\n")
+        game_over()
+    if mermaid_choice == 'earplugs':
+        x = inventory.get('earplugs')
+        if x == True:
+            sorcerer_room()
+        else:
+            print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n")
+            game_over()
+
+
+def sorcerer_room():
+    print('\ndefine function')
     exit()
 
 
@@ -95,7 +114,7 @@ earplugs in one corner.
     }
 
     ear_plugs(inventory, player_answer)
-    door_choice()
+    door_choice(inventory)
 
 
 if __name__ == '__main__':
