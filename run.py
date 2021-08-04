@@ -69,14 +69,16 @@ def mermaid_room(inventory):
     if mermaid_choice == 'listen':
         print(f"\nYou got enchanted and stay listening to the mermaid forever. You die!\n")
         game_over()
-    if mermaid_choice == 'earplugs':
+    elif mermaid_choice == 'earplugs':
         x = inventory.get('earplugs')
         if x == True:
             sorcerer_room(inventory)
         else:
             print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n")
             game_over()
-
+    else:
+        print("\nIncorrect answer, type 'listen' or 'earplugs' only.\n")
+        mermaid_room(inventory)
 
 def sorcerer_room(inventory):
     """
@@ -89,7 +91,7 @@ def sorcerer_room(inventory):
         garden_room(inventory)
     else:
         print("\nIncorrect answer, try again!\n")
-        sorcerer_room()
+        sorcerer_room(inventory)
 
 
 def garden_room(inventory):
@@ -102,7 +104,6 @@ def garden_room(inventory):
     if garden_choice == 'yellow':
         y = inventory.get('exit_key')
         if y == True:
-            # print('you win')
             game_win()
     elif garden_choice == 'green':
         print("\nEverything is very dark and you don't see the cliff. You die!\n")
