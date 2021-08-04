@@ -47,15 +47,16 @@ and telepathically tells you that if you wish to go through the door you will ne
 
     print(a)
     riddle = input(f"What belongs to you but is used by everyone?\n")
-    if riddle == "your name" or "name":
+    if riddle == "your name" or riddle == "name":
         mermaid_room()
-    if riddle != "your name" or "name":
+    else:
         print(f"Incorrect answer, try again!\n")
         firebird_room()
 
 
 def mermaid_room():
     print("need to define mermaid room")
+    exit()
 
 
 def game_over():
