@@ -50,16 +50,18 @@ and telepathically tells you that if you wish to go through the door you will ne
     if riddle == "your name" or riddle == "name":
         print("\nWell done! The Firebird gifts you with a key.\n")
         mermaid_room(inventory)
-        inventory["key"] = True
+        inventory["exit_key"] = True
+        game_win()
+        exit()
         return True
     else:
         print(f"Incorrect answer, try again!\n")
-        firebird_room()
+        firebird_room(inventory)
 
 
 def mermaid_room(inventory):
     """
-    Function access game_over() and the inventory dictionary
+    Level 3 of the game. Function access game_over() and the inventory dictionary.
     """
     print(f"\nLevel 3: A mermaid is singing beautifully in the room. the next door is easily accessible.\n")
     mermaid_choice = input(f"\nDo you want to listen to her or use the earplugs? Type 'listen' or 'earplugs'\n")
@@ -70,25 +72,48 @@ def mermaid_room(inventory):
     if mermaid_choice == 'earplugs':
         x = inventory.get('earplugs')
         if x == True:
-            sorcerer_room()
+            sorcerer_room(inventory)
         else:
             print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n")
             game_over()
 
 
-def sorcerer_room():
+def sorcerer_room(inventory):
+    """
+    Level 4 of the game. Relates to previous function mermaid_room() and next function garden_room().
+    """
     print(f"\nLevel 4: A sorcerer is standing in front of you, you will pass if you solve the riddle.\n")
     sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical. It lives up in the sky but can fly. What is it?\n")
 
     if sorcerer_riddle == 'rainbow':
-        garden_room()
+        garden_room(inventory)
     else:
         print("\nIncorrect answer, try again!\n")
         sorcerer_room()
 
 
-def garden_room():
-    exit()
+def garden_room(inventory):
+    """
+    Level 5 of the game.
+    """
+    print("\nLevel 5: You managed to get outside of the building, it seems you are in a garden in front of a fence with 2 doors.\n")
+    garden_choice = input("\nWhich one will you take, the green or the yellow door? Type 'green' or 'yellow'\n")
+    
+    if garden_choice == 'yellow':
+        y = inventory.get('exit_key')
+        if y == True:
+            # print('you win')
+            game_win()
+    elif garden_choice == 'green':
+        print("\nEverything is very dark and you don't see the cliff. You die!\n")
+        game_over()
+    else:
+        print("\nIncorrect answer, type 'green' or ''yellow' only.\n")
+        garden_room(inventory)
+
+
+def game_win():
+    print('\nYOU GOT OUT OF THE MISTERY HOUSE, YOU WON!\n')
 
 
 def game_over():
@@ -96,11 +121,11 @@ def game_over():
     Ends the game and asks the player if s/he wants to play again
     """
     print('GAME OVER')
-    replay = input(f"Do you want to play again? yes/no\n")
+    replay = input(f"\nDo you want to play again? yes/no\n")
     if replay == 'yes':
         main()
     if replay == 'no':
-        print(f"Thank you for playing with us. Hope to see you soon!")
+        print(f"\nThank you for playing with us. Hope to see you soon!\n")
         exit()
 
 
@@ -110,7 +135,7 @@ def main():
     """
     print("\nWelcome to Adventureland, the adventure of you life!\n")
 
-    player_name = input(F"Pleaser enter your name: \n")
+    player_name = input(F"\nPleaser enter your name: \n")
 
     s = \
 """Level 1: Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a 
@@ -124,13 +149,11 @@ earplugs in one corner.
 
     inventory = {
         "earplugs": False,
-        "key": False
+        "exit_key": False
     }
-    print(inventory)
 
     ear_plugs(inventory, player_answer)
     door_choice(inventory)
-
 
 if __name__ == '__main__':
     main()
