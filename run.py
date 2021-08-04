@@ -40,7 +40,7 @@ def firebird_room(inventory):
     Player needs to solve the Firebird's riddle
     """
     a = \
-"""\nIn the next room you find a majestuous Firebird at the central area, blocking your way to the next door. You try to reach 
+"""\nLevel 2: In the next room you find a majestuous Firebird at the central area, blocking your way to the next door. You try to reach 
 the exit very carefully trying not to disturb the bird but she wakes up and open her wings. She looks right into your eyes 
 and telepathically tells you that if you wish to go through the door you will need to solve the following riddle
 """.format()
@@ -59,9 +59,9 @@ and telepathically tells you that if you wish to go through the door you will ne
 
 def mermaid_room(inventory):
     """
-    Function access game_over() or the inventory 
+    Function access game_over() and the inventory dictionary
     """
-    print(f"\nA mermaid is singing beautifully in the room. the next door is easily accessible.\n")
+    print(f"\nLevel 3: A mermaid is singing beautifully in the room. the next door is easily accessible.\n")
     mermaid_choice = input(f"\nDo you want to listen to her or use the earplugs? Type 'listen' or 'earplugs'\n")
 
     if mermaid_choice == 'listen':
@@ -77,7 +77,17 @@ def mermaid_room(inventory):
 
 
 def sorcerer_room():
-    print('\ndefine function')
+    print(f"\nLevel 4: A sorcerer is standing in front of you, you will pass if you solve the riddle.\n")
+    sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical. It lives up in the sky but can fly. What is it?\n")
+
+    if sorcerer_riddle == 'rainbow':
+        garden_room()
+    else:
+        print("\nIncorrect answer, try again!\n")
+        sorcerer_room()
+
+
+def garden_room():
     exit()
 
 
@@ -103,7 +113,7 @@ def main():
     player_name = input(F"Pleaser enter your name: \n")
 
     s = \
-"""Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a 
+"""Level 1: Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a 
 dinner party with some friends and one of a sudden everything turned blurry. The room is completely empty except for some 
 earplugs in one corner.
 """.format(player_name)
