@@ -27,12 +27,12 @@ def door_choice():
 
     if door_answer == 'blue':
         print("\nThere is a hangry wolf in the room, the door is locked at your back. There is no escape, you die!\n")
-        return game_over()
+        game_over()
     if door_answer == 'red':
-        return firebird_room()
+        firebird_room()
     if door_answer != 'blue' or 'red':
         print(f"\nInvalid answer, please type 'red' or 'blue' only.\n")
-        return door_choice()
+        door_choice()
 
 
 def firebird_room():
@@ -48,13 +48,15 @@ and telepathically tells you that if you wish to go through the door you will ne
     print(a)
     riddle = input(f"What belongs to you but is used by everyone?\n")
     if riddle == "your name" or "name":
-        return mermaid_room()
+        mermaid_room()
     if riddle != "your name" or "name":
         print(f"Incorrect answer, try again!\n")
         firebird_room()
 
+
 def mermaid_room():
     print("need to define mermaid room")
+
 
 def game_over():
     """
@@ -63,9 +65,10 @@ def game_over():
     print('GAME OVER')
     replay = input(f"Do you want to play again? yes/no\n")
     if replay == 'yes':
-        return main()
+        main()
     if replay == 'no':
         print(f"Thank you for playing with us. Hope to see you soon!")
+        exit()
 
 
 def main():
@@ -92,8 +95,6 @@ earplugs in one corner.
 
     ear_plugs(inventory, player_answer)
     door_choice()
-    firebird_room()
-    game_over()
 
 
 if __name__ == '__main__':
