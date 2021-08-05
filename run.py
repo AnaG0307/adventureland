@@ -1,5 +1,5 @@
-import sys
-sys.setrecursionlimit(100000)
+# import sys
+# sys.setrecursionlimit(100000)
 
 def ear_plugs(inventory, player_answer):
     """
@@ -8,15 +8,17 @@ def ear_plugs(inventory, player_answer):
     Requests yes/no answer from player to keep playing.
     Updates the inventory dictionary to True when object is picked.
     """
+    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
+
     if player_answer == 'yes':
         print(f"\nThe earplugs are now in your pocket.\n")
         inventory["earplugs"] = True
         return True
-    if player_answer == 'no':
+    elif player_answer == 'no':
         return False
-    if player_answer != 'yes' or 'no':
+    else:
         print(f"\nInvalid answer, please type 'yes' or 'no' only.\n")
-        return ear_plugs(inventory, player_answer)
+        ear_plugs(inventory, player_answer)
 
 
 def door_choice(inventory):
