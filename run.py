@@ -1,3 +1,5 @@
+import re
+
 def ear_plugs(inventory, player_answer):
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
@@ -76,7 +78,7 @@ def mermaid_room(inventory):
         if x == True:
             sorcerer_room(inventory)
         else:
-            print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n").lower()
+            print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n")
             game_over()
     else:
         print("\nIncorrect answer, type 'listen' or 'earplugs' only.\n")
@@ -164,7 +166,7 @@ except for some earplugs in one corner.\n
     inventory = {
         "earplugs": False,
         "exit_key": False
-    }
+        }
 
     ear_plugs(inventory, player_answer)
     door_choice(inventory)
