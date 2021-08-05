@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(100000)
+
 def ear_plugs(inventory, player_answer):
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
@@ -115,6 +118,7 @@ def garden_room(inventory):
 
 def game_win():
     print('\nYOU GOT OUT OF THE MISTERY HOUSE, YOU WON!\n')
+    replay()
 
 
 def game_over():
@@ -122,12 +126,19 @@ def game_over():
     Ends the game and asks the player if s/he wants to play again
     """
     print('GAME OVER')
+    replay()
+
+
+def replay():
+    """
+    docstring
+    """
     replay = input(f"\nDo you want to play again? yes/no\n")
     if replay == 'yes':
         main()
     if replay == 'no':
         print(f"\nThank you for playing with us. Hope to see you soon!\n")
-        exit()
+        exit()    
 
 
 def main():
@@ -158,3 +169,5 @@ earplugs in one corner.
 
 if __name__ == '__main__':
     main()
+
+    
