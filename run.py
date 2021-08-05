@@ -15,7 +15,7 @@ def ear_plugs(inventory, player_answer):
     if player_answer == 'no':
         return False
     if player_answer != 'yes' or 'no':
-        print(f"Invalid answer, please type 'yes' or 'no' only.\n")
+        print(f"\nInvalid answer, please type 'yes' or 'no' only.\n")
         return ear_plugs(inventory, player_answer)
 
 
@@ -29,7 +29,7 @@ def door_choice(inventory):
     door_answer = input(f"\nThere are two doors in front of you, one is red, the other one is blue. You need to choose one, type 'red' or 'blue'.\n")
 
     if door_answer == 'blue':
-        print("\nThere is a hangry wolf in the room, the door is locked at your back. There is no escape, you die!\n")
+        print("\nThere is a hangry wolf in the room, the door has locked at your back. You die!\n")
         game_over()
     if door_answer == 'red':
         firebird_room(inventory)
@@ -88,7 +88,7 @@ def sorcerer_room(inventory):
     Level 4 of the game. Relates to previous function mermaid_room() and next function garden_room().
     """
     print(f"\nLevel 4: A sorcerer is standing in front of you, you will pass if you solve the riddle.\n")
-    sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical. It lives up in the sky but can fly. What is it?\n")
+    sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical. It lives up in the sky but can't fly. What is it?\n")
 
     if sorcerer_riddle == 'rainbow':
         garden_room(inventory)
@@ -153,9 +153,9 @@ def main():
     player_name = input(F"\nPleaser enter your name: \n")
 
     s = \
-"""Level 1: Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were at a 
-dinner party with some friends and one of a sudden everything turned blurry. The room is completely empty except for some 
-earplugs in one corner.
+"""\nLevel 1: Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were going back 
+home after spending the afternoon with your friends on the street and one of a sudden everything turned blurry. The room is completely empty 
+except for some earplugs in one corner.\n
 """.format(player_name)
 
     print(s)
