@@ -118,7 +118,7 @@ def garden_room(inventory):
 
 def game_win():
     print('\nYOU GOT OUT OF THE MISTERY HOUSE, YOU WON!\n')
-    replay()
+    game_replay()
 
 
 def game_over():
@@ -126,19 +126,22 @@ def game_over():
     Ends the game and asks the player if s/he wants to play again
     """
     print('GAME OVER')
-    replay()
+    game_replay()
 
 
-def replay():
+def game_replay():
     """
     docstring
     """
     replay = input(f"\nDo you want to play again? yes/no\n")
     if replay == 'yes':
         main()
-    if replay == 'no':
+    elif replay == 'no':
         print(f"\nThank you for playing with us. Hope to see you soon!\n")
-        exit()    
+        exit()
+    else:
+        print("\nPlease type 'yes' or 'no' only. Do you want to play again?\n")
+        game_replay() 
 
 
 def main():
