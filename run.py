@@ -1,6 +1,3 @@
-# import sys
-# sys.setrecursionlimit(100000)
-
 def ear_plugs(inventory, player_answer):
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
@@ -8,7 +5,7 @@ def ear_plugs(inventory, player_answer):
     Requests yes/no answer from player to keep playing.
     Updates the inventory dictionary to True when object is picked.
     """
-    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
+    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n").lower()
 
     if player_answer == 'yes':
         print(f"\nThe earplugs are now in your pocket.\n")
@@ -28,7 +25,7 @@ def door_choice(inventory):
     Blue door gets the player to the Wolf room and the game ends.
     Requests correct answer from player to keep playing.
     """
-    door_answer = input(f"\nThere are two doors in front of you, one is red, the other one is blue. You need to choose one, type 'red' or 'blue'.\n")
+    door_answer = input(f"\nThere are two doors in front of you, one is red, the other one is blue. You need to choose one, type 'red' or 'blue'.\n").lower()
 
     if door_answer == 'blue':
         print("\nThere is a hangry wolf in the room, the door has locked at your back. You die!\n")
@@ -51,7 +48,7 @@ and telepathically tells you that if you wish to go through the door you will ne
 """.format()
 
     print(a)
-    riddle = input(f"What belongs to you but is used by everyone?\n")
+    riddle = input(f"What belongs to you but is used by everyone?\n").lower()
     if riddle == "your name" or riddle == "name":
         print("\nWell done! The Firebird gifts you with a key.\n")
         mermaid_room(inventory)
@@ -69,7 +66,7 @@ def mermaid_room(inventory):
     Level 3 of the game. Function access game_over() and the inventory dictionary.
     """
     print(f"\nLevel 3: A mermaid is singing beautifully in the room. the next door is easily accessible.\n")
-    mermaid_choice = input(f"\nDo you want to listen to her or use the earplugs? Type 'listen' or 'earplugs'\n")
+    mermaid_choice = input(f"\nDo you want to listen to her or use the earplugs? Type 'listen' or 'earplugs'\n").lower()
 
     if mermaid_choice == 'listen':
         print(f"\nYou got enchanted and stay listening to the mermaid forever. You die!\n")
@@ -79,7 +76,7 @@ def mermaid_room(inventory):
         if x == True:
             sorcerer_room(inventory)
         else:
-            print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n")
+            print(f"\nYou didn't pick the earplugs before and now you got enchanted by the mermaid. You die!\n").lower()
             game_over()
     else:
         print("\nIncorrect answer, type 'listen' or 'earplugs' only.\n")
@@ -90,7 +87,7 @@ def sorcerer_room(inventory):
     Level 4 of the game. Relates to previous function mermaid_room() and next function garden_room().
     """
     print(f"\nLevel 4: A sorcerer is standing in front of you, you will pass if you solve the riddle.\n")
-    sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical. It lives up in the sky but can't fly. What is it?\n")
+    sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical. It lives up in the sky but can't fly. What is it?\n").lower()
 
     if sorcerer_riddle == 'rainbow':
         garden_room(inventory)
@@ -104,7 +101,7 @@ def garden_room(inventory):
     Level 5 of the game.
     """
     print("\nLevel 5: You managed to get outside of the building, it seems you are in a garden in front of a fence with 2 doors.\n")
-    garden_choice = input("\nWhich one will you take, the green or the yellow door? Type 'green' or 'yellow'\n")
+    garden_choice = input("\nWhich one will you take, the green or the yellow door? Type 'green' or 'yellow'\n").lower()
     
     if garden_choice == 'yellow':
         y = inventory.get('exit_key')
@@ -135,7 +132,7 @@ def game_replay():
     """
     docstring
     """
-    replay = input(f"\nDo you want to play again? yes/no\n")
+    replay = input(f"\nDo you want to play again? yes/no\n").lower()
     if replay == 'yes':
         main()
     elif replay == 'no':
@@ -162,7 +159,7 @@ except for some earplugs in one corner.\n
 
     print(s)
 
-    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n")
+    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n").lower()
 
     inventory = {
         "earplugs": False,
@@ -174,5 +171,3 @@ except for some earplugs in one corner.\n
 
 if __name__ == '__main__':
     main()
-
-    
