@@ -1,5 +1,3 @@
-import re
-
 def ear_plugs(inventory, player_answer):
     """
     Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
