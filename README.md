@@ -18,9 +18,19 @@ Adventureland starts with the player been asked their name and then they get int
 
 ## Features
 #### Existing Features
+- The voice of the game guides the player throught the different rooms
+- The player plays against him/herself
+- If the player dies they can choose to restart the game or not
+- Player can freely move inside the labyrinth
+- Input checking: the player needs to provide the correct answers to keep playing
+
 #### future Features
+- Introduce new levels to increment the level of difficulty
+- Add a map for the player to know where they are
+- Add a score tab
 
 [Back to Top ⇧](#Adventureland) 
+
 
 ## Data Model
 
@@ -30,14 +40,31 @@ Adventureland starts with the player been asked their name and then they get int
 
 [Back to Top ⇧](#Adventureland) 
 
+
 ## Testing
 
 [Back to Top ⇧](#Adventureland) 
 
+
 ## Deployment
+
+The project is been deployed to Heroku.
+
+Steps for deployment:
+- Install dependencies in the requirements.txt file
+- Create a new app in Heroku: choose a unique name and region
+- No sensitive data needed to be kept secret so nothing was added in the config Var tab
+- Add necessary buildpacks: Python and NodeJS in this order
+- For deployment method, GitHub was selected and confirmed we want to connect to GitHub
+- Connect Heroku to the repository for Advertureland
+- Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed
+- Click on Deploy
 
 [Back to Top ⇧](#Adventureland) 
 
+
 ## Credits
+[Adventurelib](https://adventurelib.readthedocs.io/en/stable/index.html#) for the imported library
+[Stackoverflow](https://stackoverflow.com/) and [GeeksforGeeks](https://www.geeksforgeeks.org/) for debugging
 
 [Back to Top ⇧](#Adventureland) 

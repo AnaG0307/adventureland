@@ -155,9 +155,9 @@ def main():
 
     s = \
 """\nLevel 1: Hello {}, you just wake up and do not recognise the room around you. 
-The last thing your remember is that you were going back home after spending the 
-afternoon with your friends on the street and one of a sudden everything turned 
-blurry. The room is completely empty except for some earplugs in one corner.\n
+The last thing your remember is that you were going back home after spending 
+the afternoon with your friends on the street and one of a sudden everything 
+turned blurry. The room is completely empty except for some earplugs in one corner.\n
 """.format(player_name)
 
     print(s)
