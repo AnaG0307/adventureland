@@ -6,8 +6,6 @@ def ear_plugs(inventory, player_answer):
     Requests yes/no answer from player to keep playing.
     Updates the inventory dictionary to True when object is picked.
     """
-    player_answer = input(f"\nDo you want to pick up the earplugs? yes/no\n").lower()
-
     if player_answer == 'yes':
         print(f"\nThe earplugs are now in your pocket.\n")
         inventory["earplugs"] = True
@@ -15,7 +13,7 @@ def ear_plugs(inventory, player_answer):
     elif player_answer == 'no':
         return False
     else:
-        print(f"\nInvalid answer, please type 'yes' or 'no' only.\n")
+        player_answer = input(f"\nInvalid answer, please type 'yes' or 'no' only.\n").lower()
         ear_plugs(inventory, player_answer)
 
 
