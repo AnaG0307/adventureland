@@ -16,6 +16,10 @@
 
 Adventureland starts with the player been asked their name and then they get introduced to the story. They are the main character and do not remember what happened. The last memory is of them being in the street with some friends and then everything became blurry. The player wakes up in an empty room and straight away gets asked what actions s/he wants to take to get out of there. The player will go from room to room and will get to choose what items to pick, what items to use and what doors to go through in order to survive and get out of the place.
 
+#### Solutions to Riddles
+- Firebird riddle: the solution is "name" or "your name"
+- Sorcerer riddle: the solution is "rainbow"
+
 ## Features
 #### Existing Features
 - The voice of the game guides the player throught the different rooms
@@ -24,7 +28,7 @@ Adventureland starts with the player been asked their name and then they get int
 - Player can freely move inside the labyrinth
 - Input checking: the player needs to provide the correct answers to keep playing
 
-#### future Features
+#### Future Features
 - Introduce new levels to increment the level of difficulty
 - Add a map for the player to know where they are
 - Add a score tab
@@ -64,7 +68,7 @@ Steps for deployment:
 
 
 ## Credits
-[Adventurelib](https://adventurelib.readthedocs.io/en/stable/index.html#) for the imported library
-[Stackoverflow](https://stackoverflow.com/) and [GeeksforGeeks](https://www.geeksforgeeks.org/) for debugging
+- [Adventurelib](https://adventurelib.readthedocs.io/en/stable/index.html#) for the imported library
+- [Stackoverflow](https://stackoverflow.com/) and [GeeksforGeeks](https://www.geeksforgeeks.org/) for debugging
 
 [Back to Top ⇧](#Adventureland) 
