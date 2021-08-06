@@ -1,7 +1,8 @@
+from adventurelib import *
+
 def ear_plugs(inventory, player_answer):
     """
-    Player can choose to pick the object 'earplugs', if the player chooses 'yes' the item gets 
-    stored in the inventory function for future use.
+    Player can choose to pick the object 'earplugs' and store it in the inventory. 
     Requests yes/no answer from player to keep playing.
     Updates the inventory dictionary to True when object is picked.
     """
@@ -21,8 +22,6 @@ def ear_plugs(inventory, player_answer):
 def door_choice(inventory):
     """
     Player can choose to go through red or blue door.
-    Red door gets the player to the Firebird room and keeps playing.
-    Blue door gets the player to the Wolf room and the game ends.
     Requests correct answer from player to keep playing.
     """
     door_answer = input(f"\nThere are two doors in front of you, one is red, the other one is blue. You need to choose one, type 'red' or 'blue'.\n").lower()
@@ -42,9 +41,11 @@ def firebird_room(inventory):
     Player needs to solve the Firebird's riddle
     """
     a = \
-"""\nLevel 2: In the next room you find a majestuous Firebird at the central area, blocking your way to the next door. You try to reach 
-the exit very carefully trying not to disturb the bird but she wakes up and open her wings. She looks right into your eyes 
-and telepathically tells you that if you wish to go through the door you will need to solve the following riddle:\n
+"""\nLevel 2: In the next room you find a majestuous Firebird at the central area, 
+blocking your way to the next door. You try to reach the exit very carefully trying 
+not to disturb the bird but she wakes up and open her wings. She looks right into 
+your eyes and telepathically tells you that if you wish to go through the door you 
+will need to solve the following riddle:\n
 """.format()
 
     print(a)
@@ -100,7 +101,10 @@ def garden_room(inventory):
     """
     Level 5 of the game.
     """
-    print("\nLevel 5: You managed to get outside of the building, it seems you are in a garden in front of a fence with 2 doors.\n")
+    print(
+        "\nLevel 5: You managed to get outside of the building, it seems you are " +
+        "in a garden in front of a fence with 2 doors.\n"
+        )
     garden_choice = input("\nWhich one will you take, the green or the yellow door? Type 'green' or 'yellow'\n").lower()
     
     if garden_choice == 'yellow':
@@ -152,9 +156,10 @@ def main():
     player_name = input(F"\nPleaser enter your name: \n")
 
     s = \
-"""\nLevel 1: Hello {}, you just wake up and do not recognise the room around you. The last thing your remember is that you were going back 
-home after spending the afternoon with your friends on the street and one of a sudden everything turned blurry. The room is completely empty 
-except for some earplugs in one corner.\n
+"""\nLevel 1: Hello {}, you just wake up and do not recognise the room around you. 
+The last thing your remember is that you were going back home after spending the 
+afternoon with your friends on the street and one of a sudden everything turned 
+blurry. The room is completely empty except for some earplugs in one corner.\n
 """.format(player_name)
 
     print(s)
@@ -168,6 +173,7 @@ except for some earplugs in one corner.\n
 
     ear_plugs(inventory, player_answer)
     door_choice(inventory)
+
 
 if __name__ == '__main__':
     main()
