@@ -1,47 +1,53 @@
 from adventurelib import *
 
-riddles = {
-    r_a {
-        'question': 'What has to be broken before you can use it?',
-        'answer';'egg'
-    },
-    r_b {
-        'question': 'I am tall when I am young, and I am short when I am old. What am I?',
-        'answer': 'candle'
-    },
-    r_c {
-        'question': 'What month of the year has 28 days?',
-        'answer': 'all'
-    },
-    r_d {
-        'question': 'What is full of holes but still holds water?',
-        'answer': 'sponge'
-    },
-    r_e {
-        'question': 'What is always in front of you but can’t be seen?',
-        'answer': 'future'
-    },
-    r_f {
-        'question': 'What gets wet while drying?',
-        'answer': 'towel'
-    },
-    r_g {
-        'question': 'I shave every day, but my beard stays the same. What am I?',
-        'answer': 'barber'
-    },
-    r_h {
-        'question': 'What can’t talk but will reply when spoken to?',
-        'answer': 'echo'
-    },
-    r_i {
-        'question': 'The more of this there is, the less you see. What is it?',
-        'answer': 'darkness'
-    },
-    r_j {
-        'question': 'What goes up and down but doesn’t move?',
-        'answer': 'staircase'
-    }  
-}
+import random
+
+
+# riddle = {
+#     'r_a' : {
+#         'question': 'What has to be broken before you can use it?',
+#         'answer':'egg'
+#     },
+#     'r_b' : {
+#         'question': 'I am tall when I am young, and I am short when I am old. What am I?',
+#         'answer': 'candle'
+#     },
+#     'r_c' : {
+#         'question': 'What month of the year has 28 days?',
+#         'answer': 'all'
+#     },
+#     'r_d' : {
+#         'question': 'What is full of holes but still holds water?',
+#         'answer': 'sponge'
+#     },
+#     'r_e' : {
+#         'question': 'What is always in front of you but can’t be seen?',
+#         'answer': 'future'
+#     },
+#     'r_f' : {
+#         'question': 'What gets wet while drying?',
+#         'answer': 'towel'
+#     },
+#     'r_g' : {
+#         'question': 'I shave every day, but my beard stays the same. What am I?',
+#         'answer': 'barber'
+#     },
+#     'r_h' : {
+#         'question': 'What can’t talk but will reply when spoken to?',
+#         'answer': 'echo'
+#     },
+#     'r_i' : {
+#         'question': 'The more of this there is, the less you see. What is it?',
+#         'answer': 'darkness'
+#     },
+#     'r_j' : {
+#         'question': 'What goes up and down but doesn’t move?',
+#         'answer': 'staircase'
+#     }  
+# }
+
+
+
 
 def ear_plugs(inventory, player_answer):
     """
@@ -77,7 +83,7 @@ def door_choice(inventory):
         door_choice(inventory)
 
 
-def firebird_room(inventory):
+def firebird_room(inventory, riddle):
     """
     Player needs to solve the Firebird's riddle
     """
@@ -90,6 +96,9 @@ will need to solve the following riddle:\n
 """.format()
 
     print(a)
+
+    # f_riddle = random.choice(list(riddle.keys()))
+    # print(f_riddle)
     riddle = input(f"What belongs to you but is used by everyone?\n").lower()
     if riddle == "your name" or riddle == "name":
         print("\nWell done! The Firebird gifts you with a key.\n")
