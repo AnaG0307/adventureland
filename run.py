@@ -1,6 +1,6 @@
 from adventurelib import *
 
-import random
+# import random
 
 
 # riddle = {
@@ -83,7 +83,7 @@ def door_choice(inventory):
         door_choice(inventory)
 
 
-def firebird_room(inventory, riddle):
+def firebird_room(inventory):
     """
     Player needs to solve the Firebird's riddle
     """
