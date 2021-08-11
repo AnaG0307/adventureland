@@ -41,7 +41,7 @@ Adventureland starts with the player been asked their name and then they get int
 
 Before starting coding the game I did have a look to written adventure games like the classic [The Dreamhold](https://eblong.com/zarf/zweb/dreamhold/) and decided that I wwanted to inlcude in mine. The final decision for Adventureland was as per below:
 
-[Adventureland Flowchart](assets/images/game-flowchart.png)
+![Adventureland Flowchart](assets/images/game-flowchart.png)
 
 ## Testing
 
@@ -52,8 +52,6 @@ The game is been manually tested by doing the following:
 #### Bugs
 
 While coding the game there was a few issues with the if loop to get the expected answer from the player, an infinite loop was created. This was corrected by using an 'input' statement rather than a 'print' so the player could modify their answer rather than repeting the whole function again.
-
-
 
 #### Remaining Bugs
 
