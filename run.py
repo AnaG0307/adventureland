@@ -6,13 +6,13 @@ def ear_plugs(inventory, player_answer):
     Updates the inventory dictionary to True when object is picked.
     """
     if player_answer == 'yes':
-        print(f"\nThe earplugs are now in your pocket.\n")
+        print("\nThe earplugs are now in your pocket.\n")
         inventory["earplugs"] = True
         return True
     elif player_answer == 'no':
         return False
     else:
-        player_answer = input(f"\nInvalid answer, please type 'yes' or\
+        player_answer = input("\nInvalid answer, please type 'yes' or\
         'no' only.\n").lower()
         ear_plugs(inventory, player_answer)
 
@@ -22,7 +22,7 @@ def door_choice(inventory):
     Player can choose to go through red or blue door.
     Requests correct answer from player to keep playing.
     """
-    door_answer = input(f"\nThere are two doors in front of you, one is red,\
+    door_answer = input("\nThere are two doors in front of you, one is red,\
     the other one is blue. You need to choose one, type 'red' or\
         'blue'.\n").lower()
 
@@ -33,7 +33,7 @@ def door_choice(inventory):
     if door_answer == 'red':
         firebird_room(inventory)
     if door_answer != 'blue' or 'red':
-        print(f"\nInvalid answer, please type 'red' or 'blue' only.\n")
+        print("\nInvalid answer, please type 'red' or 'blue' only.\n")
         door_choice(inventory)
 
 
@@ -41,7 +41,7 @@ def firebird_room(inventory):
     """
     Player needs to solve the Firebird's riddle
     """
-    a = (f" 2: In the next room you find a majestuous Firebird at the central\
+    a = (" 2: In the next room you find a majestuous Firebird at the central\
     area, blocking your way to the next door. You try to reach the exit very\
     carefully trying not to disturb the bird but she wakes up and open \
     her wings. She looks right into your eyes and telepathically tells you \
@@ -50,7 +50,7 @@ def firebird_room(inventory):
 
     print(a)
 
-    riddle = input(f"What belongs to you but is used by everyone?\n").lower()
+    riddle = input("What belongs to you but is used by everyone?\n").lower()
 
     if riddle == "your name" or riddle == "name":
         print("\nWell done! The Firebird gifts you with a key.\n")
@@ -61,7 +61,7 @@ def firebird_room(inventory):
         return True
 
     else:
-        riddle = input(f"Incorrect answer, try again!\n").lower
+        riddle = input("Incorrect answer, try again!\n").lower
         firebird_room(inventory)
 
 
@@ -70,13 +70,13 @@ def mermaid_room(inventory):
     Level 3 of the game. Function access game_over() and the inventory
     dictionary.
     """
-    print(f"\nLevel 3: A mermaid is singing beautifully in the room. the next\
+    print("\nLevel 3: A mermaid is singing beautifully in the room. the next\
     door is easily accessible.\n")
-    mermaid_choice = input(f"\nDo you want to listen to her or use\
+    mermaid_choice = input("\nDo you want to listen to her or use\
     the earplugs? Type 'listen' or 'earplugs'\n").lower()
 
     if mermaid_choice == 'listen':
-        print(f"\nYou got enchanted and stay listening to the mermaid\
+        print("\nYou got enchanted and stay listening to the mermaid\
         forever. You die!\n")
         game_over()
     elif mermaid_choice == 'earplugs':
@@ -84,7 +84,7 @@ def mermaid_room(inventory):
         if x is True:
             sorcerer_room(inventory)
         else:
-            print(f"\nYou didn't pick the earplugs before and now\
+            print("\nYou didn't pick the earplugs before and now\
             you got enchanted by the mermaid. You die!\n")
             game_over()
     else:
@@ -97,9 +97,9 @@ def sorcerer_room(inventory):
     Level 4 of the game. Relates to previous function mermaid_room() and next
     function garden_room().
     """
-    print(f"\nLevel 4: A sorcerer is standing in front of you, you will pass if\
+    print("\nLevel 4: A sorcerer is standing in front of you, you will pass if\
         you solve the riddle.\n")
-    sorcerer_riddle = input(f"\nIt is beautiful, colorful and magical.\
+    sorcerer_riddle = input("\nIt is beautiful, colorful and magical.\
         It lives up in the sky but can't fly. What is it?\n").lower()
 
     if sorcerer_riddle == 'rainbow':
@@ -148,11 +148,11 @@ def game_replay():
     """
     docstring
     """
-    replay = input(f"\nDo you want to play again? yes/no\n").lower()
+    replay = input("\nDo you want to play again? yes/no\n").lower()
     if replay == 'yes':
         main()
     elif replay == 'no':
-        print(f"\nThank you for playing with us. Hope to see you soon!\n")
+        print("\nThank you for playing with us. Hope to see you soon!\n")
         exit()
     else:
         print("\nPlease type 'yes' or 'no' only. Do you want to play again?\n")
@@ -165,7 +165,7 @@ def main():
     """
     print("\nWelcome to Adventureland, the adventure of your life!\n")
 
-    player_name = input(F"\nPlease enter your name: \n")
+    player_name = input("\nPlease enter your name: \n")
 
     s = (f"Room 1: Hello {player_name}, you just wake up and do not recognise \
         the room around you. The last thing your remember is that you were \
@@ -175,7 +175,7 @@ def main():
 
     print(s)
 
-    player_answer = input(f"\nDo you want to pick up the earplugs? \
+    player_answer = input("\nDo you want to pick up the earplugs? \
     yes/no\n").lower()
 
     inventory = {
