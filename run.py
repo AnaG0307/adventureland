@@ -43,11 +43,11 @@ def firebird_room(inventory):
     Requests correct answer from player to go to next room.
     """
     a = ("\nRoom 2: In the next room you find a majestuous Firebird at the central \
-area, blocking your way to the next door. You try to reach the exit very \
-carefully trying not to disturb the bird but she wakes up and open \
-her wings. She looks right into your eyes and telepathically tells you \
-that if you wish to go through the door you will need to solve the \
-following riddle:\n")
+area, blocking your way to the next door. You try to reach the exit \
+very carefully trying not to disturb the bird but she wakes up and \
+open her wings. She looks right into your eyes and telepathically \
+tells you that if you wish to go through the door you will need \
+to solve the following riddle:\n")
 
     print(a)
 
