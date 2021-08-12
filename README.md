@@ -80,21 +80,28 @@ At the time of testing there were no bugs left.
 
 - Used [PEP8online.com](http://pep8online.com/) and no errors were returned.
 
+![validator-screenshot](assets/images/pep8validator.png)
+
 
 ## Deployment
 
 The project is been deployed to Heroku.
 
 Steps for deployment:
-- Install dependencies in the requirements.txt file;
-- Check the Procfile to ensure a correct deployment to Heroku;
-- Create a new app in Heroku: choose a unique name and region;
-- No sensitive data needed to be kept secret so nothing was added in the config Var tab;
-- Add necessary buildpacks: Python and NodeJS in this order;
-- For deployment method, GitHub was selected and confirmed we want to connect to GitHub;
-- Connect Heroku to the repository for Advertureland;
-- Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
-- Click on Deploy.
+
+- Local deployment:
+    - Fork and clone the project;
+    - Check the Procfile to ensure a correct deployment to Heroku;
+
+- Deployment to Heroku
+    - Create an account in Heroku;
+    - Create a new app in Heroku: choose a unique name and region;
+    - No sensitive data needed to be kept secret so nothing was added in the config Var tab;
+    - Add necessary buildpacks: Python and NodeJS in this order;
+    - For deployment method, GitHub was selected and confirmed we want to connect to GitHub;
+    - Connect Heroku to the repository for Advertureland;
+    - Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
+    - Click on Deploy.
 
 
 ## Credits
