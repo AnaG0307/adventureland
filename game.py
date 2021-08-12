@@ -173,10 +173,10 @@ def main():
 
     player_name = input("\nPlease enter your name: \n")
 
-    s = (f"Room 1: Hello {player_name}, you just wake up and do not recognise \
-the room around you. The last thing your remember is that you were \
+    s = (f"Room 1: Hello {player_name}, you just wake up and do\nnot recognise \
+the room around you. The last thing\n your remember is that you were \
 going back home after spending the afternoon with your friends on \
-the street and one of a sudden everything turned blurry. The room \
+the street and one of a sudden everything \nturned blurry. The room \
 is completely empty except for some earplugs in one corner.\n")
 
     print(s)
