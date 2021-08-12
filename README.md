@@ -57,19 +57,21 @@ After having worked on the flowchart planned and had all the code working as exp
 
 The game is been manually tested by doing the following:
 - Tested the game in Gitpod by providing incorrect data (i.e. answering other than 'yes' or 'no' when those were the only accepted answers) to check the game flow could be followed;
-- The game is also tested in Heroku to check all the expected behaviours described below were also true;
+- The game is also tested in Heroku to check all the expected behaviours described above were also true;
 
 #### Bugs
 
 While coding the game there was a few issues with the if loop to get the expected answer from the player, an infinite loop was created. This was corrected by using an 'input' statement rather than a 'print' so the player could modify their answer rather than repeting the whole function again.
 
+When playing the words get splitted in the Heroku app, a solution could not be found into this.
+
 #### Remaining Bugs
 
-At the time of testing there was no bugs left.
+At the time of testing there were no bugs left.
 
 #### Validator Testing
 
-- Used [PEP8online.com](http://pep8online.com/) and no errors were returned
+- Used [PEP8online.com](http://pep8online.com/) and no errors were returned.
 
 
 ## Deployment
