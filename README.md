@@ -7,7 +7,7 @@
 
 1. [How to Play](#How-to_play)
 2. [Features](#Features)
-3. [UX/UI](#UX/UI)
+3. [Data Model](#Data-Model)
 4. [Testing](#Testing)
 5. [Deployment](#Deployment)
 6. [Credits](#Credits)
@@ -34,14 +34,20 @@ Adventureland starts with the player been asked their name and then they get int
 - Add a score tab;
 - Be able to freely move back and forth inside the house;
 
-[Back to Top ⇧](#Adventureland) 
 
+## Data Model
 
-## UX/UI
-
-Before starting coding the game I did have a look to written adventure games like the classic [The Dreamhold](https://eblong.com/zarf/zweb/dreamhold/) and decided that I wwanted to inlcude in mine. The final decision for Adventureland was as per below:
+Before starting to code the game I did have a look to written adventure games like the classic [The Dreamhold](https://eblong.com/zarf/zweb/dreamhold/) and decided what I wanted to inlcude in mine. The final decision for Adventureland was as per below:
 
 ![Adventureland Flowchart](assets/images/game-flowchart.png)
+
+The different rooms have been created using functions, to connect them they call each other depending on what the player's interaction is. 
+
+In regards of the objects collected in the different rooms, those are collected in a dictionary with boolean values. The value is set to 'False' by default and if the object is collected it changes to 'True', allowing the player to use it when necessary (if they have collected, of course).
+
+After having worked on the flowchart planned and had all the code working as expected, I analysed the quality of the code. I noticed that if in the future I want to add more rooms and extra levels of difficulty I will need to change how the code is organised. At the moment the logic of the game and the room's specifications are mixed together within the functions, this makes very difficult to have a high amount of rooms because the code would become very complex pretty soon. After analysing and investigating further I believe the best option is, on one hand, to create a dictionary from one side specifying the rooms characteristics and, on the other hand, to create the fucntions with the games´ logic (i.e. what happens if an incorrect answer is entered, what happens when the player goes into a particular room).
+
+
 
 ## Testing
 
@@ -54,6 +60,8 @@ The game is been manually tested by doing the following:
 While coding the game there was a few issues with the if loop to get the expected answer from the player, an infinite loop was created. This was corrected by using an 'input' statement rather than a 'print' so the player could modify their answer rather than repeting the whole function again.
 
 #### Remaining Bugs
+
+At the time of testing there was no bugs left.
 
 #### Validator Testing
 
@@ -74,8 +82,6 @@ Steps for deployment:
 - Connect Heroku to the repository for Advertureland
 - Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed
 - Click on Deploy
-
-[Back to Top ⇧](#Adventureland) 
 
 
 ## Credits
