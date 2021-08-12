@@ -76,7 +76,7 @@ The game is been manually tested by doing the following:
 
 While coding the game there was a few issues with the if loop to get the expected answer from the player, an infinite loop was created. This was corrected by using an 'input' statement rather than a 'print' so the player could modify their answer rather than repeting the whole function again.
 
-When playing the words get splitted in the Heroku app, a solution could not be found into this.
+When playing in Heroku or in the Gitpod terminal, the words get splitted in the Heroku app, a solution could not be found into this and it is been left untouched.
 
 #### Remaining Bugs
 
@@ -96,7 +96,13 @@ The project is been deployed to Heroku.
 Steps for deployment:
 
 - Local deployment:
-    - Fork and clone the project;
+    - Fork the project to copy the repository: 
+        - On GitHub navigate to the Adventureland repository and in the top-right corner of the page click 'fork';
+    - Clone the project to create a local copy of the repository in your computer:
+        - Within the forked repository click on the green button 'Code';
+        - To clone the repository using HTTPS, under "Clone with HTTPS", click the clipboard sign. Select if you want to use an SSH key or GitHub CLI, then click the clipboard sign;
+        - Open the terminal and change the directory to the location you want;
+        - Type 'git clone' and paste the URL copied in step 2 and press enter to create your clone;
     - Check the Procfile to ensure a correct deployment to Heroku;
 
 - Deployment to Heroku
