@@ -20,7 +20,7 @@ def ear_plugs(inventory, player_answer):
 def door_choice(inventory):
     """
     Player can choose to go through red or blue door.
-    Requests correct answer from player to keep playing.
+    Requests correct answer from player.
     """
     door_answer = input("\nThere are two doors in front of you, one is red,\
 the other one is blue. You need to choose one, type 'red' or 'blue'.\n").lower()
@@ -39,6 +39,7 @@ your back. You die!\n")
 def firebird_room(inventory):
     """
     Room 2: Player needs to solve the Firebird's riddle
+    Requests correct answer from player to go to next room.
     """
     a = ("\nRoom 2: In the next room you find a majestuous Firebird at the central \
 area, blocking your way to the next door. You try to reach the exit very \
@@ -67,6 +68,7 @@ following riddle:\n")
 def mermaid_room(inventory):
     """
     Room 3: Function access game_over() and the inventory dictionary.
+    Requests correct answer from player to go to next room.
     """
     print("\nRoom 3: A mermaid is singing beautifully in the room. The next \
 door is easily accessible.\n")
@@ -94,6 +96,7 @@ def sorcerer_room(inventory):
     """
     Room 4: Relates to previous function mermaid_room() and next
     function garden_room().
+    Requests correct answer from player to go to next room.
     """
     print("\nRoom 4: A sorcerer is standing in front of you, you will pass if \
 you solve the riddle.\n")
@@ -109,7 +112,8 @@ It lives up in the sky but can't fly. What is it?\n").lower()
 
 def garden_room(inventory):
     """
-    Room 5 of the game.
+    Room 5: final room, connected game win/over functions. 
+    Requests correct answer from player to go to next room.
     """
     print("\nRoom 5: You managed to get outside of the building, it seems \
 you are in a garden in front of a fence with 2 doors.\n")
@@ -130,13 +134,16 @@ You die!\n")
 
 
 def game_win():
+    """
+    Prints the win message and connects with the replay function.
+    """
     print('\nYOU GOT OUT OF THE MISTERY HOUSE, YOU WON!\n')
     game_replay()
 
 
 def game_over():
     """
-    Ends the game and asks the player if s/he wants to play again
+    Ends the game and connects to the replay function.
     """
     print('GAME OVER')
     game_replay()
@@ -144,7 +151,7 @@ def game_over():
 
 def game_replay():
     """
-    docstring
+    Requests the player if they wish to play the game again or not.
     """
     replay = input("\nDo you want to play again? yes/no\n").lower()
     if replay == 'yes':
