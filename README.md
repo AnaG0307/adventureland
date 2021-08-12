@@ -25,7 +25,12 @@ Adventureland starts with the player been asked their name and then they get int
 - The voice of the game guides the player throught the different rooms;
 - The player plays against him/herself;
 - If the player dies they can choose to restart the game or not;
-- Riddles: the player needs to provide the correct answers to keep playing;
+
+
+- Answers validation: 
+    - Riddles: the player needs to provide the correct answers to keep playing;
+    - When a specific answer is not provided the player is prompted again;
+
 - Objects: the player needs to collect objects in order to get out of the house;
 
 #### Future Features
