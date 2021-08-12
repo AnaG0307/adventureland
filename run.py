@@ -12,7 +12,7 @@ def ear_plugs(inventory, player_answer):
     elif player_answer == 'no':
         return False
     else:
-        player_answer = input("\nInvalid answer, please type 'yes' or\
+        player_answer = input("\nInvalid answer, please type 'yes' or \
 'no' only.\n").lower()
         ear_plugs(inventory, player_answer)
 
@@ -22,12 +22,12 @@ def door_choice(inventory):
     Player can choose to go through red or blue door.
     Requests correct answer from player.
     """
-    door_answer = input("\nThere are two doors in front of you, one is red,\
+    door_answer = input("\nThere are two doors in front of you, one is red, \
 the other one is blue. You need to choose one, type 'red' or \
 'blue'.\n").lower()
 
     if door_answer == 'blue':
-        print("\nThere is a hangry wolf in the room, the door has locked at \
+        print("\nThere is a 'hangry' wolf in the room, the door has locked at \
 your back. You die!\n")
         game_over()
     if door_answer == 'red':
@@ -60,7 +60,6 @@ to solve the following riddle:\n")
         game_win()
         exit()
         return True
-
     else:
         riddle = input("\nIncorrect answer, try again!\n").lower
         firebird_room(inventory)
