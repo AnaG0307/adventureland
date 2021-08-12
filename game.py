@@ -23,7 +23,8 @@ def door_choice(inventory):
     Requests correct answer from player.
     """
     door_answer = input("\nThere are two doors in front of you, one is red,\
-the other one is blue. You need to choose one, type 'red' or 'blue'.\n").lower()
+the other one is blue. You need to choose one, type 'red' or \
+'blue'.\n").lower()
 
     if door_answer == 'blue':
         print("\nThere is a hangry wolf in the room, the door has locked at \
@@ -112,7 +113,7 @@ It lives up in the sky but can't fly. What is it?\n").lower()
 
 def garden_room(inventory):
     """
-    Room 5: final room, connected game win/over functions. 
+    Room 5: final room, connected game win/over functions.
     Requests correct answer from player to go to next room.
     """
     print("\nRoom 5: You managed to get outside of the building, it seems \
