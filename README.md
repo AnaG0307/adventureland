@@ -23,13 +23,17 @@ Adventureland starts with the player been asked their name and then they get int
 ## Features
 #### Existing Features
 - The voice of the game guides the player throught the different rooms;
+![feature01](assets/images/features01.png)
+
 - The player plays against him/herself;
 - If the player dies they can choose to restart the game or not;
+![feature02](assets/images/features02.png)
 
 
 - Answers validation: 
     - Riddles: the player needs to provide the correct answers to keep playing;
     - When a specific answer is not provided the player is prompted again;
+![feature03](assets/images/features03.png)
 
 - Objects: the player needs to collect objects in order to get out of the house;
 
