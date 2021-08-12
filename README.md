@@ -50,8 +50,7 @@ The different rooms have been created using functions, to connect them they call
 
 In regards of the objects collected in the different rooms, those are collected in a dictionary with boolean values. The value is set to 'False' by default and if the object is collected it changes to 'True', allowing the player to use it when necessary (if they have collected, of course).
 
-After having worked on the flowchart planned and had all the code working as expected, I analysed the quality of the code. I noticed that if in the future I want to add more rooms and extra levels of difficulty I will need to change how the code is organised. At the moment the logic of the game and the room's specifications are mixed together within the functions, this makes very difficult to have a high amount of rooms because the code would become very complex pretty soon. After analysing and investigating further I believe the best option is, on one hand, to create a dictionary from one side specifying the rooms characteristics and, on the other hand, to create the fucntions with the games´ logic (i.e. what happens if an incorrect answer is entered, what happens when the player goes into a particular room).
-
+After having worked on the flowchart planned and had all the code working as expected, I analysed the quality of the code. I noticed that if in the future I want to add more rooms and extra levels of difficulty I will need to change how the code is organised. At the moment the logic of the game and the room's specifications are mixed together within the functions, this makes very difficult to have a biggest amount of rooms because the code would become very complex pretty soon. After analysing and investigating further I believe the best option is, on one hand, to create a dictionary from one side specifying the rooms characteristics and, on the other hand, to create the functions with the games' logic (i.e. what happens if an incorrect answer is entered, what happens when the player goes into a particular room). This would allow to create a much complex set of rooms in each level as well as creating different levels of difficulty.
 
 
 ## Testing
@@ -78,19 +77,19 @@ At the time of testing there was no bugs left.
 The project is been deployed to Heroku.
 
 Steps for deployment:
-- Install dependencies in the requirements.txt file
-- Check the Procfile to ensure a correct deployment to Heroku
-- Create a new app in Heroku: choose a unique name and region
-- No sensitive data needed to be kept secret so nothing was added in the config Var tab
-- Add necessary buildpacks: Python and NodeJS in this order
-- For deployment method, GitHub was selected and confirmed we want to connect to GitHub
-- Connect Heroku to the repository for Advertureland
-- Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed
-- Click on Deploy
+- Install dependencies in the requirements.txt file;
+- Check the Procfile to ensure a correct deployment to Heroku;
+- Create a new app in Heroku: choose a unique name and region;
+- No sensitive data needed to be kept secret so nothing was added in the config Var tab;
+- Add necessary buildpacks: Python and NodeJS in this order;
+- For deployment method, GitHub was selected and confirmed we want to connect to GitHub;
+- Connect Heroku to the repository for Advertureland;
+- Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
+- Click on Deploy.
 
 
 ## Credits
-- [Adventurelib](https://adventurelib.readthedocs.io/en/stable/index.html#) for the imported library
-- [Stackoverflow](https://stackoverflow.com/) and [GeeksforGeeks](https://www.geeksforgeeks.org/) for debugging
+- [Lucidchart](https://www.lucidchart.com/pages/) to create the flowchart;
+- [Stackoverflow](https://stackoverflow.com/) and [GeeksforGeeks](https://www.geeksforgeeks.org/) for debugging.
 
 [Back to Top ⇧](#Adventureland) 
