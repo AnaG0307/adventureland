@@ -13,6 +13,7 @@
 6. [Credits](#Credits)
 
 
+
 ## How to Play
 
 Adventureland starts with the player been asked their name and then they get introduced to the story. They are the main character and do not remember what happened. The last memory is of them being in the street with some friends and then everything became blurry. The player wakes up in an empty room and straight away gets asked what actions s/he wants to take to get out of there. The player will go from room to room and will get to choose what items to pick, what items to use and what doors to go through in order to survive and get out of the place.
@@ -24,6 +25,7 @@ The game is designed for young gamers between the age of 8 and 10 years old that
 #### Solutions to Riddles
 - Firebird riddle: the solution is "name" or "your name";
 - Sorcerer riddle: the solution is "rainbow";
+
 
 
 ## Features
@@ -53,6 +55,7 @@ The game is designed for young gamers between the age of 8 and 10 years old that
 - Be able to freely move back and forth inside the house;
 
 
+
 ## Data Model
 
 Before starting to code the game I did have a look to written adventure games like the classic [The Dreamhold](https://eblong.com/zarf/zweb/dreamhold/) and decided what I wanted to inlcude in mine. The final decision for Adventureland was as per below:
@@ -66,6 +69,7 @@ In regards of the objects collected in the different rooms, those are collected 
 After having worked on the flowchart planned and had all the code working as expected, I analysed the quality of the code. I noticed that if in the future I want to add more rooms and extra levels of difficulty I will need to change how the code is organised. At the moment the logic of the game and the room's specifications are mixed together within the functions, this makes very difficult to have a biggest amount of rooms because the code would become very complex pretty soon. After analysing and investigating further I believe the best option is, on one hand, to create a dictionary from one side specifying the rooms characteristics and, on the other hand, to create the functions with the games' logic (i.e. what happens if an incorrect answer is entered, what happens when the player goes into a particular room). This would allow to create a much complex set of rooms in each level as well as creating different levels of difficulty.
 
 
+
 ## Testing
 
 The game is been manually tested by doing the following:
@@ -76,7 +80,10 @@ The game is been manually tested by doing the following:
 
 While coding the game there was a few issues with the if loop to get the expected answer from the player, an infinite loop was created. This was corrected by using an 'input' statement rather than a 'print' so the player could modify their answer rather than repeting the whole function again.
 
-When playing in Heroku or in the Gitpod terminal, the words get splitted in the Heroku app, a solution could not be found into this and it is been left untouched.
+When playing in Heroku or in the Gitpod terminal, the words get splitted in the Heroku app, a solution could not be found into this and it is been left untouched (see line 2 and 6 in the screenshot below).
+
+![bug](assets/images/bug.png)
+
 
 #### Remaining Bugs
 
@@ -89,11 +96,10 @@ At the time of testing there were no bugs left.
 ![validator-screenshot](assets/images/pep8validator.png)
 
 
+
 ## Deployment
 
-The project is been deployed to Heroku.
-
-Steps for deployment:
+The project is been deployed to Heroku. Steps for deployment:
 
 - Local deployment:
     - Fork the project to copy the repository: 
@@ -105,7 +111,7 @@ Steps for deployment:
         - Type 'git clone' and paste the URL copied in step 2 and press enter to create your clone;
     - Check the Procfile to ensure a correct deployment to Heroku;
 
-- Deployment to Heroku
+- Deployment to Heroku:
     - Create an account in Heroku;
     - Create a new app in Heroku: choose a unique name and region;
     - No sensitive data needed to be kept secret so nothing was added in the config Var tab;
@@ -114,6 +120,7 @@ Steps for deployment:
     - Connect Heroku to the repository for Advertureland;
     - Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
     - Click on Deploy.
+
 
 
 ## Credits
